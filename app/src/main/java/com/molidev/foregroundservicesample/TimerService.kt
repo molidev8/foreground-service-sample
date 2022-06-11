@@ -7,9 +7,9 @@ import android.os.IBinder
 
 class TimerService : Service() {
 
-    override fun onBind(p0: Intent?): IBinder? {
-        TODO("Not yet implemented")
-    }
+    private val binder: Binder = TimerBinder()
+
+    override fun onBind(p0: Intent?): IBinder = binder
 
     inner class TimerBinder : Binder() {
         val service: TimerService
